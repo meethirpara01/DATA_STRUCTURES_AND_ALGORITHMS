@@ -1,2 +1,4 @@
+.vscode
+.gitattributes
 .DS_Store
 node_modules/
