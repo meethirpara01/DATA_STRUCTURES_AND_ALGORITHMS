@@ -15,9 +15,9 @@ int FindPivotElement(int arr[], int size)
         }
         else
         {
-            if (arr[mid] < arr[mid - 1])
+            if (arr[mid - 1] >= 0 && arr[mid] < arr[mid - 1]) // HERE IS CATCH CONDITION IS MENDETARY
                 return mid - 1;
-            else if (arr[mid] > arr[mid + 1])
+            else if (arr[mid + 1] < size - 1 && arr[mid] > arr[mid + 1]) // // HERE IS CATCH CONDITION IS MENDETARY
                 return mid;
             else if (arr[start] > arr[mid])
                 end = mid - 1;
