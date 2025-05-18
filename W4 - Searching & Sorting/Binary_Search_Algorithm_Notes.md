@@ -56,7 +56,7 @@ Binary Search can be classified into four types:
    Than Handel Separately to equaleness like
    ```
    while (start == end)
-      return `start` or `mid` or `end` 
+      return star or mid or end 
    ```
 
 ---
