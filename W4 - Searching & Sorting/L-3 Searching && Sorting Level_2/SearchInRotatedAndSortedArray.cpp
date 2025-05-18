@@ -20,7 +20,7 @@ int FindPivotElement(int arr[], int size)
             else if (arr[start] > arr[mid])
                 end = mid - 1;
             else
-                start = mid + 1; // IF WE WRITE THIS CONDTION IN IF THAN WE NEED TO ADD = CONDTION TO UNDERSTAND WATVH NOTES EXAMPLE AND IF OUR MID IS ON ARR[S] THAT'S WHY WE NEED = CONDITION
+                start = mid + 1; // IF WE WRITE THIS CONDTION IN IF THAN WE NEED TO ADD = CONDTION TO UNDERSTAND WATCH NOTES EXAMPLE AND IF OUR MID IS ON ARR[S] THAT'S WHY WE NEED = CONDITION (arr[start] <= arr[mid])
         } 
         mid = start + (end - start) / 2; 
     }
