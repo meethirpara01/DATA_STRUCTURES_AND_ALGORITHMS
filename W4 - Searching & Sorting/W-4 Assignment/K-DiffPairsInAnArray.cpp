@@ -4,6 +4,7 @@ using namespace std;
 // TO SOLVE THIS QUESTION
 // 1. BRUTE FORCE CHECK ALL PAIRS O(N^2)
 // 2. TO POINTER APPROCH O(N)
+// 3. BINARY SEARCH APPROCH O(N(log N))
 
 int FindPairEqualK(int arr[], int size, int k)
 {
