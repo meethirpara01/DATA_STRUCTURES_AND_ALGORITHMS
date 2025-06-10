@@ -8,6 +8,7 @@
         "deque": "cpp",
         "set": "cpp",
         "string": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "__node_handle": "cpp"
     }
 }
