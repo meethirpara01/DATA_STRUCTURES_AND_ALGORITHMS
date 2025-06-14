@@ -9,6 +9,9 @@
         "set": "cpp",
         "string": "cpp",
         "unordered_map": "cpp",
-        "__node_handle": "cpp"
+        "__node_handle": "cpp",
+        "__locale": "cpp",
+        "string_view": "cpp",
+        "locale": "cpp"
     }
 }
