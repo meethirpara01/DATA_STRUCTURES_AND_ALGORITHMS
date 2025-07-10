@@ -12,7 +12,8 @@
         "__node_handle": "cpp",
         "__locale": "cpp",
         "string_view": "cpp",
-        "locale": "cpp"
+        "locale": "cpp",
+        "array": "cpp"
     },
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "",
