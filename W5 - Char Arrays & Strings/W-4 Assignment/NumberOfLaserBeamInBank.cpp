@@ -13,14 +13,16 @@ int countDevices(string binary)
 int NumberOfLaserBeams(vector<string> Bank)
 {
     vector<int> Devices;
-    for (auto row : Bank) {
+    for (auto row : Bank) 
+    {
         int d = countDevices(row);
         if (d > 0)
             Devices.push_back(d);  // Only non-zero device rows matter
     }
 
     int beam = 0;
-    for (int i = 0; i < Devices.size() - 1; i++) {
+    for (int i = 0; i < Devices.size() - 1; i++) 
+    {
         beam += Devices[i] * Devices[i + 1];
     }
 
