@@ -13,7 +13,9 @@
         "__locale": "cpp",
         "string_view": "cpp",
         "locale": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "sstream": "cpp",
+        "__split_buffer": "cpp"
     },
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "",
