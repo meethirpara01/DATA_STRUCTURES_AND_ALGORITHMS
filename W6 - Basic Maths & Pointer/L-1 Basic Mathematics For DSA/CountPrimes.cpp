@@ -43,7 +43,7 @@ int SIEVEAPPROCH(int num)
     prime[0] = prime[1] = false;
     int ans = 0;
 
-    for (int i = 0; i < num; i++)
+    for (int i = 2; i < num; i++)
     {
         if (prime[i])
         {
