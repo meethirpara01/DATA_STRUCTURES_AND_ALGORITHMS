@@ -16,7 +16,11 @@
         "array": "cpp",
         "sstream": "cpp",
         "__split_buffer": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "__bit_reference": "cpp",
+        "bitset": "cpp",
+        "limits": "cpp",
+        "optional": "cpp"
     },
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "",
