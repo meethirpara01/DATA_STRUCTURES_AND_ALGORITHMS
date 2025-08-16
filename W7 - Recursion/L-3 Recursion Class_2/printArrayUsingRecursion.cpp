@@ -8,7 +8,7 @@ void printArray(int arr[], int size, int index)
 
     // PROCCESING
     cout << arr[index] << " ";
-    index++;
+    ++index;
 
     // RECURSIVE CALL
     printArray(arr, size, index);

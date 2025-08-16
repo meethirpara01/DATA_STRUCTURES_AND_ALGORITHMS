@@ -20,7 +20,8 @@
         "__bit_reference": "cpp",
         "bitset": "cpp",
         "limits": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "variant": "cpp"
     },
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "",
