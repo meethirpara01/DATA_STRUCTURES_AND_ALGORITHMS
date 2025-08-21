@@ -27,9 +27,43 @@ int solve(vector<int> coins, int amount)
             }
 
             mini = min(mini, ans);
-        }
-        return mini;
+        }  
     }
+    return mini;
+}
+
+int solve1(vector<int> coins, int amount)
+{
+    if (amount == 0)
+    {
+        return 0;
+    }
+
+    if (amount < 0)
+    {
+        return INT_MAX;
+    }
+
+    int mini = INT_MAX;
+
+    for (int i = 0; i < coins.size(); i++)
+    {
+        int coin = coins[i];
+
+        // CURRENT COIN KO SIRF THBHI USE KARENGE 
+        // JAB USKI VALUE <= AMOUNT HOGI
+
+        if (coin <= amount)
+        {
+            int recAns = solve1(coins, amount - coin);
+            if (recAns != INT_MAX)
+            {
+                int ans = 1 + recAns;
+                mini = min(mini, ans);
+            }  
+        }
+    }
+    return mini;
 }
 
 int coinsChange(vector<int> coins, int amount)

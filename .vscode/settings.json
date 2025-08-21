@@ -21,7 +21,8 @@
         "bitset": "cpp",
         "limits": "cpp",
         "optional": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "complex": "cpp"
     },
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "",
