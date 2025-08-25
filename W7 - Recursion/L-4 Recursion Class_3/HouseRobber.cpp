@@ -20,7 +20,6 @@ int solve(vector<int> homes, int size, int index)
 
 int HouseRobberMaxMoney(vector<int> homes)
 {
-
     int size = homes.size();
     int index = 0;
     int ans = solve(homes, size, index);
