@@ -22,7 +22,8 @@
         "limits": "cpp",
         "optional": "cpp",
         "variant": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "new": "cpp"
     },
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "",

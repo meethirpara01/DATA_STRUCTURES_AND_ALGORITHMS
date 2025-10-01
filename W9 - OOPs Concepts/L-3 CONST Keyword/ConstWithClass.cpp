@@ -5,14 +5,19 @@ class abc
 {
     mutable int x;
     int *y;
-    int z;
+    const int z;
 
     public:
-        abc(int _x, int _y, int _z = 0) // DEFAULT ARGUMENT 
+        // abc(int _x, int _y, int _z = 0) // DEFAULT ARGUMENT 
+        // {
+        //     x = _x;
+        //     y = new int(_y);
+        //     z = _z;
+        // }
+
+        abc(int _x, int _y, int _z = 0) : x(_x), y(new int(_y)), z(_z)
         {
-            x = _x;
-            y = new int(_y);
-            z = _z;
+            cout << "INITIALIZATION LIST " << endl;
         }
 
         int getX() const
