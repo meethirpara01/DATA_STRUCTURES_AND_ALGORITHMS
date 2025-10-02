@@ -15,6 +15,7 @@ class abc
         //     z = _z;
         // }
 
+        // INITIALIZATION LIST
         abc(int _x, int _y, int _z = 0) : x(_x), y(new int(_y)), z(_z)
         {
             cout << "INITIALIZATION LIST " << endl;
