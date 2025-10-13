@@ -10,7 +10,19 @@ class abc
 
         abc(int _x, int _y) : x(_x), y(new int(_y)) {}
 
+        // DEFAULT COPY CONSTRUCTOR : IT DOSE SHALLOW COPY
         // abc(const abc &obj)
+        // {
+        //     x = obj.x;
+        //     y = obj.y;
+        // }
+
+        // SMART DEEP COPY
+        abc(const abc &obj)
+        {
+            x = obj.x;
+            y = new int(*obj.y);
+        }
 
         void print() const 
         {
