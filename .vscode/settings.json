@@ -23,7 +23,8 @@
         "optional": "cpp",
         "variant": "cpp",
         "complex": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "print": "cpp"
     },
     "editor.fontSize": 16,
     "terminal.integrated.fontFamily": "",

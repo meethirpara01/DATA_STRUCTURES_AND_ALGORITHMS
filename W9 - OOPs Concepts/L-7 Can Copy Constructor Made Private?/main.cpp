@@ -8,8 +8,6 @@ class Box
     Box(int _w) : width(_w) {};
     
     public:
-        
-
         int getWidth() const
         {
             return width;
@@ -19,7 +17,8 @@ class Box
         {
             width = _val;
         }
-        friend class BoxFactory;
+
+    friend class BoxFactory;
 };
 
 class BoxFactory
@@ -44,3 +43,8 @@ int main()
     // cout << b.getWidth() << endl;
     return 0;
 }
+
+
+
+// SAME THINK DOSE IN SINGLETON CLASS
+// FOR MORE UNDERSTANDING ABOUT CONSTRUCTOR REFER THIS :- https://learn.microsoft.com/en-us/cpp/cpp/constructors-cpp?view=msvc-170
