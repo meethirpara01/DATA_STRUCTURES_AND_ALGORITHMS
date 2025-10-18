@@ -42,7 +42,7 @@ public:
 
     // Append string
     void append(const MyString &other);
-
+    
     // Find substring
     int find(const MyString& substr) const;
 
