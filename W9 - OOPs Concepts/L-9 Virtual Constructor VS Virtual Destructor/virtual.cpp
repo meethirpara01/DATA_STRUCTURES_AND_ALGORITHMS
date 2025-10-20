@@ -9,7 +9,7 @@ class Base
             cout << "Base Ctor" << endl;
         }
 
-        ~Base()
+        virtual ~Base()
         {
             cout << "Base Dtor" << endl;
         }
@@ -17,9 +17,11 @@ class Base
 
 class Derived : public Base
 {
+    int *a;
     public:
         Derived()
         {
+            a = new int[1000];
             cout << "Derived Ctor" << endl;
         }
 
