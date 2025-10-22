@@ -1,131 +1,140 @@
-// I LEARN IN THIS LECTURE 
-        // WHAT IS LINKED LIST 
+// I LEARN IN THIS LECTURE
+        // WHAT IS LINKED LIST
         // WHY WE NEED THAT
-        // SYNTEXT AND HOW TO CONNECT NODES (->next) 
-        // PRINT NODE LIST 
-        // FIND LENGTH OF NODE LIST 
-        // INSERT ELEMENT ON HEAD 
+        // SYNTEXT AND HOW TO CONNECT NODES (->next)
+        // PRINT NODE LIST
+        // FIND LENGTH OF NODE LIST
+        // INSERT ELEMENT ON HEAD
         // INSERT ELEMENT ON TAIL
-        // INSERT ELEMENT ON POSITION  
+        // INSERT ELEMENT ON POSITION
 
 #include <iostream>
 using namespace std;
 
-class Node {
-        public:
+class Node
+{
+public:
         int data;
-        Node* next;
+        Node *next;
 
-        Node() {
+        Node()
+        {
                 this->data = 0;
                 this->next = NULL;
         }
-        Node(int data) {
+        Node(int data)
+        {
                 this->data = data;
                 this->next = NULL;
         }
-
-
 };
 
-//I want to insert a node right at the head of Linked List
-void insertAtHead(Node* &head, Node* &tail, int data) {
-        //check for Empty LL
-        if(head == NULL) {
-                Node* newNode = new Node(data);
+// I want to insert a node right at the head of Linked List
+void insertAtHead(Node *&head, Node *&tail, int data)
+{
+        // check for Empty LL
+        if (head == NULL)
+        {
+                Node *newNode = new Node(data);
                 head = newNode;
                 tail = newNode;
         }
-        else {
-                //step1:
-                Node* newNode = new Node(data);
-                //step2:
-                newNode -> next = head;
-                //step3:
+        else
+        {
+                // step1:
+                Node *newNode = new Node(data);
+                // step2:
+                newNode->next = head;
+                // step3:
                 head = newNode;
         }
-
-
 }
-//I want to insert a node right at the end of LINKED LIST
-void insertAtTail(Node* &head,Node* &tail, int data) {
-        if(head == NULL) {
-                Node* newNode = new Node(data);
+// I want to insert a node right at the end of LINKED LIST
+void insertAtTail(Node *&head, Node *&tail, int data)
+{
+        if (head == NULL)
+        {
+                Node *newNode = new Node(data);
                 head = newNode;
                 tail = newNode;
-                
         }
-        else {
-            //step1: creatae a node
-            Node* newNode = new Node(data);
-            //step2: connect woth tail ndoe
-            tail->next = newNode;
-            //step3: update tail;
-            tail = newNode;
+        else
+        {
+                // step1: creatae a node
+                Node *newNode = new Node(data);
+                // step2: connect woth tail ndoe
+                tail->next = newNode;
+                // step3: update tail;
+                tail = newNode;
         }
-
 }
-void print(Node* head) {
+void print(Node *head)
+{
 
-        Node* temp = head;
-        while(temp != NULL) {
+        Node *temp = head;
+        while (temp != NULL)
+        {
                 cout << temp->data << " ";
                 temp = temp->next;
         }
 }
 
-int findLength(Node* &head ) {
+int findLength(Node *&head)
+{
         int len = 0;
-        Node* temp = head;
-        while(temp != NULL) {
+        Node *temp = head;
+        while (temp != NULL)
+        {
                 temp = temp->next;
                 len++;
         }
         return len;
 }
 
-void insertAtPosition(int data, int position, Node* &head, Node* &tail) {
+void insertAtPosition(int data, int position, Node *&head, Node *&tail)
+{
         int len = findLength(head);
-        
-        if(position == 1) {
-                insertAtHead(head, tail , data);
+
+        if (position == 1)
+        {
+                insertAtHead(head, tail, data);
                 return;
         }
-        else if(position > len) {
+        else if (position > len)
+        {
                 insertAtTail(head, tail, data);
                 return;
         }
-        else {
-            Node* newNode = new Node(data);
-            
-            Node* prev = NULL;
-            Node* curr = head;
-            while(position != 1) {
-                position--;
-                prev = curr;
-                curr = curr->next;
-            }
-            
-            //step3:
-            newNode -> next = curr;
+        else
+        {
+                Node *newNode = new Node(data);
 
-            //step4:
-            prev -> next = newNode;
-            
+                Node *prev = NULL;
+                Node *curr = head;
+                while (position != 1)
+                {
+                        position--;
+                        prev = curr;
+                        curr = curr->next;
+                }
+
+                // step3:
+                newNode->next = curr;
+
+                // step4:
+                prev->next = newNode;
         }
-        
 }
 
+int main()
+{
 
-
-int main() {
-
-        Node* head = NULL;
-        Node* tail = NULL;
-        insertAtHead(head, tail,20);
-        insertAtHead(head, tail,50);
-        insertAtHead(head, tail,60);
-        insertAtHead(head,tail, 90);
+        Node *head = NULL;
+        Node *tail = NULL;
+        insertAtHead(head, tail, 20);
+        insertAtHead(head, tail, 50);
+        insertAtHead(head, tail, 60);
+        insertAtHead(head, tail, 90);
         insertAtTail(head, tail, 77);
 
         print(head);

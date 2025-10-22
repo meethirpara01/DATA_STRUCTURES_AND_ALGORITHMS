@@ -1,1 +1,0 @@
-Node* curr = head;
