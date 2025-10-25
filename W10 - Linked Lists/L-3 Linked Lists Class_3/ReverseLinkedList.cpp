@@ -43,7 +43,7 @@ Node* reverseUsingRecursion(Node* prev, Node* curr)
         return prev; 
     }
 
-    // SOLVE ONE CASE
+    // PROCCESING - SOLVE ONE CASE
     Node* next = curr->next;
     curr->next = prev;
     prev = curr;
