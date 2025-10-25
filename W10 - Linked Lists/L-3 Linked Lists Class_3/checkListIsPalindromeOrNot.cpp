@@ -101,7 +101,7 @@ bool isPalindrome(Node* head)
     // COMPARE BOTH LISTS
     Node* temp = head;
     Node* temp2 = head2;
-    while (temp != NULL && temp2 != NULL)
+    while (temp != NULL && temp2 != NULL) // YOU CAN ALSO WRITE THIS CONDITION (temp2 != NULL)
     {
         if (temp->data != temp2->data)
         {
