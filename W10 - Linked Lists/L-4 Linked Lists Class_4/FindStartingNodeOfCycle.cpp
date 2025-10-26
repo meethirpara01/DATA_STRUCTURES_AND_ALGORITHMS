@@ -25,27 +25,35 @@ public:
     }
 };
 
-bool hashCycle(Node* head)
+Node* checkCycleUsingSlowFast(Node* head)
 {
-    map<Node*, bool> table;
+    Node* slow = head;
+    Node* fast = head;
 
-    Node* temp = head;
-    while (temp != NULL)
+    while (fast != NULL)
     {
-        if (table[temp] == false)
+        fast = fast -> next;
+        if (fast != NULL)
         {
-            table[temp] = true;
+            fast = fast -> next;
+            slow = slow -> next;
         }
         
-        else
-        {
-            // CYCLE PRESENT
-            return true;
-        }
-        temp = temp -> next; 
+        // CJECK FOR LOOP
+        if (fast == slow)
+            break;
     }
     // LOOP NOT PRESENT
-    return false;
+    slow = head;
+
+    // SLOW AND FAST MOVE 1 STEP
+    while (fast != slow)
+    {
+        slow = slow -> next;
+        fast = fast -> next;
+    }
+
+    return slow;
 }
 
 int main()
@@ -64,8 +72,9 @@ int main()
 
     Node *head = first;
 
-    bool ans = hashCycle(head);
-    ans ? cout << "CYCLE PRESENT!" << endl : cout << "CYCLE NOT PRESENT!" << endl;
+    Node* temp = checkCycleUsingSlowFast(head);
+    cout << "STARTING NODE OF CYCLE IS: " << endl;
+    cout << temp -> data << endl;
     cout << endl;
     return 0;
 }

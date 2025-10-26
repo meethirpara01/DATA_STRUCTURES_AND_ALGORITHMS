@@ -48,6 +48,28 @@ bool hashCycle(Node* head)
     return false;
 }
 
+bool checkCycleUsingSlowFast(Node* head)
+{
+    Node* slow = head;
+    Node* fast = head;
+
+    while (fast != NULL)
+    {
+        fast = fast -> next;
+        if (fast != NULL)
+        {
+            fast = fast -> next;
+            slow = slow -> next;
+        }
+        
+        // CJECK FOR LOOP
+        if (fast == slow)
+            return true;
+    }
+    // LOOP NOT PRESENT
+    return false;
+}
+
 int main()
 {
     Node *first = new Node(10);
@@ -64,7 +86,7 @@ int main()
 
     Node *head = first;
 
-    bool ans = hashCycle(head);
+    bool ans = checkCycleUsingSlowFast(head);
     ans ? cout << "CYCLE PRESENT!" << endl : cout << "CYCLE NOT PRESENT!" << endl;
     cout << endl;
     return 0;
