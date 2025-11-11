@@ -104,18 +104,18 @@ void createMapping(int inorder[], int size, map<int, int> &valueToIndexMap)
     }
 }
 
-Node *constructTreeFromPreAndInorderTraversal(map<int, int> &valueToIndexMap, int preOrder[], int inOrder[], int &preIndex, int inOrderStart, int inOrderEnd, int size)
+Node *constructTreeFromPostAndInorderTraversal(map<int, int> &valueToIndexMap, int postOrder[], int inOrder[], int &postIndex, int inOrderStart, int inOrderEnd, int size)
 {
     // BASE CASE
-    if (preIndex >= size || inOrderStart > inOrderEnd)
+    if (postIndex < 0 || inOrderStart > inOrderEnd)
     {
         return NULL;
     }
 
     // SOLVE ONE CASE
     // PROCCESSING
-    int element = preOrder[preIndex];
-    preIndex++;
+    int element = postOrder[postIndex];
+    postIndex--;
     Node *root = new Node(element);
 
     // SEARCH ELEMENT IN INORDER AND FIND THEIR POSITION IN INORDER
@@ -124,9 +124,9 @@ Node *constructTreeFromPreAndInorderTraversal(map<int, int> &valueToIndexMap, in
 
 
     // RECURSIVE CALL
-    root->left = constructTreeFromPreAndInorderTraversal(valueToIndexMap, preOrder, inOrder, preIndex, inOrderStart, position - 1, size);
-    
-    root->right = constructTreeFromPreAndInorderTraversal(valueToIndexMap, preOrder, inOrder, preIndex, position + 1, inOrderEnd, size);
+    root->right = constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inOrder, postIndex, position + 1, inOrderEnd, size);
+
+    root->left = constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inOrder, postIndex, inOrderStart, position - 1, size);
 
     return root;
 }
@@ -145,25 +145,25 @@ int main()
     //     cin >> inorder[i];
     // }
     
-    // int preorder[size];
-    // cout << "Enter Element For PREORDER" << endl;
+    // int postorder[size];
+    // cout << "Enter Element For POSTORDER" << endl;
     // for (int i = 0; i < size; i++)
     // {
-    //     cout << "Enter preorder's " << i + 1 << "element :";
-    //     cin >> preorder[i];
+    //     cout << "Enter postorder's " << i + 1 << "element :";
+    //     cin >> postorder[i];
     // }
     
-    int inorder[] = {10, 8, 6, 2, 4, 12};
-    int preOrder[] = {2, 8, 10, 6, 4, 12};
+    int inorder[] = {8, 14, 6, 2, 10, 4};
+    int postOrder[] = {8, 6, 14, 4, 10, 2};
     int size = 6;
-    int preOrderIndex = 0;
+    int postOrderIndex = size - 1;
     int inorderStart = 0;
     int inorderEnd = size - 1;
 
     map<int, int> valueToIndexMap;
     createMapping(inorder, size, valueToIndexMap);
 
-    Node *root = constructTreeFromPreAndInorderTraversal(valueToIndexMap, preOrder, inorder, preOrderIndex, inorderStart, inorderEnd, size);
+    Node *root = constructTreeFromPostAndInorderTraversal(valueToIndexMap, postOrder, inorder, postOrderIndex, inorderStart, inorderEnd, size);
     levelOrderTraversal(root);
     return 0;
 }
