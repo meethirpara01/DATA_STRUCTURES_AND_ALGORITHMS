@@ -162,7 +162,7 @@ Node *deleteNodeFromBST(Node *root, int target)
         // FOURTH CASE --> LEFT NOT NULL AND RIGHT NOT NULL
         else
         {
-            // CHHOSE CASE A -> FIND MAXIMUM VALUE OF LEFT SUB TREE
+            // CHHOSE CASE A -> FIND MAXIMUM VALUE IN LEFT SUB TREE
             Node* maxi = maxValue(root->left);
             // REPLACEMENT
             root->data = maxi->data;
