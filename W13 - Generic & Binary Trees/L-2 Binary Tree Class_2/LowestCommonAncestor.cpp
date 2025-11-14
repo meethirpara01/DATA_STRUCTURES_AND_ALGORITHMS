@@ -79,6 +79,6 @@ int main()
     Node* q = root->right->right;
 
     Node* LCA = lowestCommonAncestor(root, p, q);
-    cout << "LOWEST COMMON ANCESTOR IS: " << LCA << endl;
+    cout << "LOWEST COMMON ANCESTOR IS: " << LCA->data << endl;
     return 0;
 }
