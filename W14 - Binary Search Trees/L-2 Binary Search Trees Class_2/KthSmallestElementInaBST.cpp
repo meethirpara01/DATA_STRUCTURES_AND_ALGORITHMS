@@ -92,6 +92,7 @@ void createBST(Node *&root)
 
 int kthSmallest(Node* root, int &k)
 {
+    // BASE CASE
     if (root == NULL)
     {
         return -1;
