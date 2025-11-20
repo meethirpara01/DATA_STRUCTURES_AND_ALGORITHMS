@@ -96,6 +96,35 @@ class Heap
         }
 };
 
+
+void heapfiy(int *arr, int n, int index)
+{
+    // NO NEED OF BASE CASE
+    int leftIndex = 2 * index;
+    int rightIndex = 2 * index + 1;
+
+    // FIND OUT WHICH ELEMENT IS BIGGRE IN THIS THREE ELEMENT
+    int largestIndex = index;
+    // CHECK LEFT CHILD
+    if (leftIndex <= n && arr[largestIndex] < arr[leftIndex])
+    {
+        arr[largestIndex] = leftIndex;
+    }
+    if (rightIndex <= n && arr[largestIndex] < arr[rightIndex])
+    {
+        arr[largestIndex] = rightIndex;
+    }
+
+    // NO CHANGE
+    if (index != largestIndex)
+    {
+        swap(arr[index], arr[largestIndex]);
+        // RECURSIVE CALL
+        index = largestIndex;
+        heapfiy(arr, n, index);
+    }
+}
+
 int main()
 {
     Heap h(20);
