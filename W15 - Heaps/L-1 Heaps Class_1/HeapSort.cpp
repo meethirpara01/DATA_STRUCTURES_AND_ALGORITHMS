@@ -145,20 +145,39 @@ void heapSort(int arr[], int n)
 
 int main()
 {
-    Heap h(20);
-    h.insert(10);
-    h.insert(20);
-    h.insert(5);
-    h.insert(11);
-    h.insert(6);
+    int arr[] = {-1, 5, 10, 15, 20, 25, 12};
+    int n = 6;
+    buildHeap(arr, n);
 
-    h.printHeap();
+    cout << "PRINTING HEAP: " << endl;
+    for (int i = 1; i <= n; i++)
+    {
+        cout << arr[i] << " ";
+    }
     cout << endl;
 
-    int ans = h.deleteFromHeap();
-    cout << "Answer: " << ans << endl;
-    h.printHeap();
+    heapSort(arr, n);
+    cout << "PRINTING SORTED HEAP: " << endl;
+    for (int i = 1; i <= n; i++)
+    {
+        cout << arr[i] << " ";
+    }
     cout << endl;
+    
+    // Heap h(20);
+    // h.insert(10);
+    // h.insert(20);
+    // h.insert(5);
+    // h.insert(11);
+    // h.insert(6);
+
+    // h.printHeap();
+    // cout << endl;
+
+    // int ans = h.deleteFromHeap();
+    // cout << "Answer: " << ans << endl;
+    // h.printHeap();
+    // cout << endl;
            
     // 5 10 15 6 25 50
     return 0;
