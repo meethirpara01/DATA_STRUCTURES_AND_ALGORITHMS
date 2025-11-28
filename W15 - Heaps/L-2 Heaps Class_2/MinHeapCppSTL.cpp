@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    // CREATE MAX-HEAP
+    // CREATE MIN-HEAP
     priority_queue<int, vector<int>, greater<int>> pq;
 
     // INSERTION
