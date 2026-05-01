@@ -9,7 +9,7 @@ int BinaryDecimalToMethod1(int n)
     // int sum = 0;
     while (n > 0)
     {
-        int bit = n % 2;     // It's Intersting
+        int bit = n % 2;     // It's Intersting - To get the last digit of a number, take modulo with its base.
         digit = bit * pow(2, i++) + digit;
         // sum = sum + digit;
         n = n / 10;
